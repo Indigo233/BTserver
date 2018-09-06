@@ -1,0 +1,35 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+
+	    <div class="row clearfix">
+		    <div class="col-md-2 column">
+		    </div>
+		    <div class="col-md-8 column">
+                <h2>检测结果</h2>
+                <table class="table table-striped" border="1">
+                    <tr>
+                        <th>图片</th>
+                        <th>色情分值</th>
+                    </tr>
+                    {% for url, s in res %}
+
+                        <tr>
+                            <td><img src={{ url }} height="150" width="300"></td>
+                            <td>{{ s }}</td>
+                        </tr>
+
+                    {% endfor %}
+
+                </table>
+		    </div>
+
+		    <div class="col-md-2 column">
+		    </div>
+	    </div>
+    </div>
+
+{% endblock %}
